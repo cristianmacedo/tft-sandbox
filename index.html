@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TFT Store Emulator</title>
+
+    <link
+      href="//db.onlinewebfonts.com/c/12420e8c141ca7c3dff41de2d59df13e?family=BeaufortforLOL-Bold"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="index.css" />
+
+    <script type="text/javascript" src="data/champions.js"></script>
+    <script type="text/javascript" src="data/items.js"></script>
+    <script type="text/javascript" src="data/traits.js"></script>
+    <script type="text/javascript" src="data/levels.js"></script>
+    <script type="text/javascript" src="data/poolsize.js"></script>
+    <script type="text/javascript" src="index.js" defer></script>
+  </head>
+  <body>
+    <div class="store">
+      <div class="stats-coins"><span data-coins>0</span>&nbsp;coins</div>
+      <div class="controls">
+        <div class="stats-level">Nv. <span data-level>0</span></div>
+        <button class="button button-prim" data-update-level>
+          <span class="button-label">Comprar EXP</span>
+          <span class="button-cost">4 ouro</span>
+        </button>
+        <button class="button button-sec" data-update-store>
+          <span class="button-label">Atualizar</span>
+          <span class="button-cost">2 ouro</span>
+        </button>
+        <div></div>
+      </div>
+      <div class="champions" data-champions></div>
+    </div>
+  </body>
+</html>

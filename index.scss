@@ -1,0 +1,206 @@
+:root {
+  --highlight: #b99862;
+  --blue-prim: #0097ac;
+  --blue-sec: #b2dadc;
+  --neutral-white: #f8fce3;
+  --text-prim: #f1e9d4;
+  --text-sec: #aaa496;
+  --background-dark: #0a1d2f;
+  --button-prim: #203b4c;
+  --button-sec: #463f2b;
+  --border: #3f351a;
+  --cost-1: #213042;
+  --cost-2: #156831;
+  --cost-3: #12407c;
+  --cost-4: #893088;
+  --cost-5: #b89d27;
+}
+
+* {
+  font-family: "BeaufortforLOL-Bold";
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.store {
+  border: 4px solid var(--highlight);
+
+  position: absolute;
+  bottom: 0px;
+
+  width: 100vw;
+
+  display: grid;
+  grid-template-columns: 2fr 8fr;
+
+  .stats-coins {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    height: 40px;
+    width: 100px;
+    background: var(--background-dark);
+    color: var(--text-prim);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid var(--highlight);
+  }
+}
+
+.controls {
+  border: 2px solid var(--border);
+  background: var(--background-dark);
+
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+
+  .stats-level {
+    color: var(--text-prim);
+    font-size: 1.2rem;
+    margin: 0 0.5rem;
+  }
+}
+
+.champions {
+  border: 2px solid var(--border);
+  background: var(--background-dark);
+
+  padding: 0.5rem;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.cost {
+  &-1 {
+    border: 4px solid var(--cost-1);
+    .champion-stats {
+      background: var(--cost-1);
+    }
+  }
+  &-2 {
+    border: 4px solid var(--cost-2);
+    .champion-stats {
+      background: var(--cost-2);
+    }
+  }
+  &-3 {
+    border: 4px solid var(--cost-3);
+    .champion-stats {
+      background: var(--cost-3);
+    }
+  }
+  &-4 {
+    border: 4px solid var(--cost-4);
+    .champion-stats {
+      background: var(--cost-4);
+    }
+  }
+  &-5 {
+    border: 4px solid var(--cost-5);
+    .champion-stats {
+      background: var(--cost-5);
+    }
+  }
+}
+
+.champion {
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+
+  background: var(--background-dark);
+
+  color: var(--text-prim);
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.5);
+
+  margin: 0.5rem;
+
+  max-width: 200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .champion-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0.4;
+    filter: blur(1px);
+
+    width: 100%;
+    height: 100%;
+  }
+
+  .champion-stats {
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .champion-trait {
+    padding: 0.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.9rem;
+
+    color: var(--text-prim);
+
+    .trait-icon {
+      width: 30px;
+    }
+
+    .trait-name {
+      text-align: right;
+    }
+  }
+}
+
+.button {
+  cursor: pointer;
+  border: 2px solid var(--highlight);
+  box-shadow: 0px 0px 20px 10px rgba(0, 0, 0, 0.5);
+  color: var(--text-prim);
+  height: 100%;
+
+  margin: 0.5rem;
+  padding: 0.5rem;
+
+  font-size: 1.4rem;
+  text-align: -webkit-center;
+
+  .button-label {
+    display: block;
+  }
+
+  .button-cost {
+    color: var(--text-sec);
+    font-weight: bold;
+    /* height: 100%; */
+  }
+
+  &:disabled {
+    filter: grayscale(0.5);
+    filter: opacity(0.5);
+  }
+}
+
+.button-prim {
+  background: var(--button-prim);
+}
+
+.button-sec {
+  background: var(--button-sec);
+}
